@@ -22,13 +22,14 @@ public class Metodos extends Drivers {
 
 	public void pausa() {
 		try {
-			
-		Thread.sleep(4000);
+
+			Thread.sleep(4000);
 		} catch (Exception e) {
-			
+
 		}
-		
-		}
+
+	}
+
 	public void validarTexto(By elemento, String msgEsperada) {
 		String msgCapturada = driver.findElement(elemento).getText();
 		assertEquals(msgEsperada, msgCapturada);

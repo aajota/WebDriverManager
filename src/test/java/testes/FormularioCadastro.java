@@ -11,19 +11,20 @@ import metodos.Metodos;
 public class FormularioCadastro {
 	Metodos metodos = new Metodos();
 	Elementos elementos = new Elementos();
-	
+
 	@Before
 	public void iniciarTeste() {
 		Executa.abrirnavegador(true);
 	}
+
 	@After
 	public void fecharTeste() {
 		Executa.fecharNavegador();
 	}
-	
+
 	@Test
 	public void preencherFormularioCadastro() {
-	
+
 		metodos.clicar(elementos.btnTesteGratis);
 		metodos.pausa();
 		metodos.clicar(elementos.btn14dias);
@@ -33,6 +34,7 @@ public class FormularioCadastro {
 		metodos.escrever(elementos.email, "audacia@gmail.com");
 		metodos.escrever(elementos.telefone, "32 959451578");
 		metodos.clicar(elementos.btnComecar);
-		metodos.validarTexto(elementos.validarMsg, "Cancele antes do período de avaliação acabar para evitar ser cobrado.");
+		metodos.validarTexto(elementos.validarMsg,
+				"Cancele antes do período de avaliação acabar para evitar ser cobrado.");
 	}
 }
